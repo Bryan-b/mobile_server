@@ -10,11 +10,12 @@ const server = http.createServer(app);
 const io = socketIO(server);
 io.on("connection", socket => {
   console.log("a user connected :D");
-  // socket.on("starting", msg => {
-  //   console.log(msg);
-  //   io.emit("starting", msg);
-  // });
 });
+
+app.get('/',(req,res)=>{
+  res.send('Welcome')
+  console.log('hmmhmhmh');
+})
 
 server.listen(PORT, () => {
   console.log("server started and listening on port " + PORT);
