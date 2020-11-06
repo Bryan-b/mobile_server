@@ -12,6 +12,10 @@ io.on("connection", (socket) => {
     console.log("client connected on websocket");
 });
 
+app.get('/',(req,res) => {
+  res.send('welcome');
+})
+
 server.listen(PORT, () => {
   console.log("server started and listening on port " + PORT);
 });
